@@ -78,6 +78,9 @@
                 <a href="/admin/research">{{ __('poll.nav.research') }}</a> | 
                 <a href="/admin/poll">{{ __('poll.nav.poll') }}</a> |
                 <a href="/admin/participant">{{ __('poll.nav.participant') }}</a> |
+                @auth
+                    <a href="/admin/logout">{{ __('Logout') }}</a> |
+                @endauth
             </div>
             
             <div class="content">
