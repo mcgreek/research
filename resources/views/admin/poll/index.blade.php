@@ -1,4 +1,4 @@
-@extends('layout-admin')
+@extends('layouts.layout-admin')
 
 @section('content')
     @include('admin.sub-menu', ['title' => __('poll.nav.poll'), 'navslug' => 'poll'])

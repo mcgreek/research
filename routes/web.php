@@ -19,6 +19,11 @@ Route::resource('admin/poll', 'Admin\PollController');
 Route::resource('admin/research', 'Admin\ResearchController');
 Route::resource('admin/participant', 'Admin\ParticipantController');
 
+//Auth::routes();
+Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('admin/login', 'Auth\LoginController@login');
+Route::get('admin/logout', 'Auth\LoginController@logout')->name('logout');
+
 /*
 Route::post('/admin/poll-share/', 'Admin\PollController@share');
 */

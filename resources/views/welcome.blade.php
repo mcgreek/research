@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout-frontend')
 
 @section('title', 'Questionnaire')
 

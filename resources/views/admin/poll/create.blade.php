@@ -1,4 +1,4 @@
-@extends('layout-admin')
+@extends('layouts.layout-admin')
 
 @section('content')
 <div><b>{{ __('poll.admin.create-pool-title') }}</b></div>
