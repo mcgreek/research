@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css","index.css"],"names":[],"mappings":"AAAA,GACE,cAAe,CACf,sBACF,CCHA,KACE,UAAW,CACX,YAAa,CACb,kBAAmB,CACnB,sBACF","file":"main.881b5204.chunk.css","sourcesContent":["h1 {\r\n  font-size: 30px;\r\n  font-family: sans-serif;\r\n}\r\n","body {\r\n  color: #000;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n"]}
