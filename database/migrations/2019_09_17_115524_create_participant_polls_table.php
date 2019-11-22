@@ -15,11 +15,14 @@ class CreateParticipantPollsTable extends Migration
     {
         Schema::create('participant_polls', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('poll_id');
-            $table->bigInteger('participant_id');
+            $table->unsignedBigInteger('poll_id')->index();
+            $table->unsignedBigInteger('participant_id')->index();
             $table->boolean('completed');
             $table->unique(['poll_id', 'participant_id'], 'uq_participant_poll');
             $table->timestamps();
+
+            $table->foreign('poll_id')->references('id')->on('polls');
+            $table->foreign('participant_id')->references('id')->on('participants');
         });
     }
 

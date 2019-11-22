@@ -15,12 +15,15 @@ class CreatePollsTable extends Migration
     {
         Schema::create('polls', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('research_id');
+            $table->unsignedBigInteger('research_id')->index();
             $table->string('token', 255)->unique();
-            $table->bigInteger('parent_poll_id')->nullable();
+            $table->unsignedBigInteger('parent_poll_id')->index()->nullable();
             $table->boolean('is_anonymus')->default(0);
             $table->boolean('allow_sharing')->default(0);
             $table->timestamps();
+
+            $table->foreign('research_id')->references('id')->on('researches');
+            $table->foreign('parent_poll_id')->references('id')->on('polls');
         });
     }
 

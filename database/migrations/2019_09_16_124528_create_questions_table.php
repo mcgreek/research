@@ -15,12 +15,14 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('screen_id');
+            $table->unsignedBigInteger('screen_id')->index();
             $table->string('title');
             $table->text('description');
             $table->mediumInteger('question_order_number');
             $table->enum('question_type', ['option', 'text']);
             $table->timestamps();
+
+            $table->foreign('screen_id')->references('id')->on('screens');
         });
         
         DB::table('questions')->insert(

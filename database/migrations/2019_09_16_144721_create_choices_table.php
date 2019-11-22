@@ -15,10 +15,12 @@ class CreateChoicesTable extends Migration
     {
         Schema::create('choices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('question_id');
+            $table->unsignedBigInteger('question_id')->index();
             $table->string('title');
             $table->mediumInteger('choice_order_number');
             $table->timestamps();
+
+            $table->foreign('question_id')->references('id')->on('questions');
         });
         
         DB::table('choices')->insert(

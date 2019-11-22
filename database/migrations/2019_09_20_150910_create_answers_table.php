@@ -15,11 +15,14 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('participant_poll_id');
-            $table->bigInteger('question_id');
+            $table->unsignedBigInteger('participant_poll_id')->index();
+            $table->unsignedBigInteger('question_id')->index();
             $table->string('answer');
             $table->unique(['participant_poll_id', 'question_id'], 'uq_answer_per_poll');
             $table->timestamps();
+
+            $table->foreign('participant_poll_id')->references('id')->on('participant_polls');
+            $table->foreign('question_id')->references('id')->on('questions');
         });
     }
 

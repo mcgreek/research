@@ -15,10 +15,13 @@ class CreateResearchScreensTable extends Migration
     {
         Schema::create('research_screens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('research_id');
-            $table->bigInteger('screen_id');
+            $table->unsignedBigInteger('research_id')->index();
+            $table->unsignedBigInteger('screen_id')->index();
             $table->mediumInteger('screen_order_number');
             $table->timestamps();
+
+            $table->foreign('research_id')->references('id')->on('researches');
+            $table->foreign('screen_id')->references('id')->on('screens');
         });
         
         DB::table('research_screens')->insert(
