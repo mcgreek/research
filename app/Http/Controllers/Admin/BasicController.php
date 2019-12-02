@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PagesController extends BasicController
+class BasicController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,10 +14,6 @@ class PagesController extends BasicController
      */
     public function __construct()
     {
-        parent::__construct();
-    }
-    
-    public function admin() {
-        return view('admin.index');
+        $this->middleware('auth');
     }
 }

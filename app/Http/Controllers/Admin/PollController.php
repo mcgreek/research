@@ -7,7 +7,7 @@ use App\Research;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PollController extends Controller
+class PollController extends BasicController
 {
     /**
      * Create a new controller instance.
@@ -16,7 +16,7 @@ class PollController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        parent::__construct();
     }
     
     /**

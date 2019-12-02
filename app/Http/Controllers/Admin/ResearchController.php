@@ -6,7 +6,7 @@ use App\Research;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ResearchController extends Controller
+class ResearchController extends BasicController
 {
     /**
      * Create a new controller instance.
@@ -15,7 +15,7 @@ class ResearchController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        parent::__construct();
     }
     
     /**

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Participant;
 
-class ParticipantController extends Controller
+class ParticipantController extends BasicController
 {
     /**
      * Create a new controller instance.
@@ -15,7 +15,7 @@ class ParticipantController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        parent::__construct();
     }
     
     /**
