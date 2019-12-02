@@ -128,7 +128,7 @@ class PollController extends BasicController
 
         $poll->save();
 
-        return redirect('/admin/poll/' . $id . '/edit');
+        return redirect('/admin/poll/' . $poll->id . '/edit');
     }
 
     /**
