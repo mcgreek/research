@@ -20,7 +20,7 @@
            |
            <a href="/admin/poll/{{ $poll->id }}" class="delete-poll">Delete</a>
            <br />
-           URL: {{ url('/poll/token/' . $poll->token) }}
+           URL: {{ $poll->getUrl() }}
         </div>
     @endforeach
 

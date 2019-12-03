@@ -12,7 +12,7 @@
     <form action="/admin/poll/share" method="post">
         {{ __('poll.admin.show-url-text') }}
         <div style="padding:5px; margin: 5px; border: 1px solid blue;">
-            {{ url('/poll/token') }}/{{ $poll->token }}
+            {{ $poll->getUrl() }}
         </div>
         
         <div>{{ __('poll.admin.show-alt-text') }}</div>

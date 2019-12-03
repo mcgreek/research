@@ -112,4 +112,14 @@ class Poll extends Model
             'parent_poll_id' => $this->id
         ]);
     }
+
+    /**
+     * Get public poll URL
+     * 
+     * @return string [description]
+     */
+    public function getUrl()
+    {
+        return url('/poll/token/' . $this->token);
+    }
 }

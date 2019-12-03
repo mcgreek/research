@@ -17,7 +17,7 @@ class PollShare extends Mailable
      * poll url
      * @var string
      */
-    private $url;
+    public $url;
 
     /**
      * Create a new message instance.
@@ -26,7 +26,7 @@ class PollShare extends Mailable
      */
     public function __construct(Poll $poll)
     {
-        $this->url = url('/poll/token/' . $poll->token);
+        $this->url = $poll->getUrl();
     }
 
     /**
@@ -38,7 +38,6 @@ class PollShare extends Mailable
     {
         return $this->from(config('mail.from.address'), config('mail.from.name'))
             ->subject(__('poll.email.subject'))
-            ->markdown('mail.poll-share')
-            ->with('url', $this->url);
+            ->markdown('mail.poll-share');
     }
 }
