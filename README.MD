@@ -1,5 +1,5 @@
 # Introduction
-This is bespoke site for creating researches and collect data via polls anonymously or using authentication.
+This is bespoke site for creating researches and data collection via polls anonymously or using authentication.
 
 This site is not complete. Project was postponed and may never be resumed. This is why I'm making it public. Maybe it's going to be useful to someone else.
 
