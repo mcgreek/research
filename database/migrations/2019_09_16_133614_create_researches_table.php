@@ -18,9 +18,6 @@ class CreateResearchesTable extends Migration
             $table->string('title');
             $table->timestamps();
         });
-        
-        DB::table('researches')->insert(['title' => 'My first research']);
-        DB::table('researches')->insert(['title' => 'Research 2 based on first']);
     }
 
     /**

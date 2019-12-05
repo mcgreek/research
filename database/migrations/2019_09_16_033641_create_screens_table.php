@@ -18,12 +18,6 @@ class CreateScreensTable extends Migration
             $table->string('title');
             $table->timestamps();
         });
-        
-        DB::table('screens')->insert(
-            [
-                'title' => 'Answer following questions'
-            ]
-        );
     }
 
     /**

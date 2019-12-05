@@ -22,30 +22,6 @@ class CreateChoicesTable extends Migration
 
             $table->foreign('question_id')->references('id')->on('questions');
         });
-        
-        DB::table('choices')->insert(
-            [
-                'question_id' => 1,
-                'title' => 'I like him!',
-                'choice_order_number' => 1
-            ]
-        );
-        
-        DB::table('choices')->insert(
-            [
-                'question_id' => 1,
-                'title' => 'I wish I never had him',
-                'choice_order_number' => 2
-            ]
-        );
-        
-        DB::table('choices')->insert(
-            [
-                'question_id' => 2,
-                'title' => 'Your answer: ',
-                'choice_order_number' => 1
-            ]
-        );
     }
 
     /**

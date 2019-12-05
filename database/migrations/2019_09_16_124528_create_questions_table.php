@@ -24,26 +24,6 @@ class CreateQuestionsTable extends Migration
 
             $table->foreign('screen_id')->references('id')->on('screens');
         });
-        
-        DB::table('questions')->insert(
-            [
-                'screen_id' => 1,
-                'title' => 'How do yo feel about your cat?',
-                'description' => 'Choose one of the following',
-                'question_order_number' => 1,
-                'question_type' => 'option'
-            ]
-        );
-        
-        DB::table('questions')->insert(
-            [
-                'screen_id' => 1,
-                'title' => 'What was your first teacher name',
-                'description' => 'This is security question to qualify your ansver',
-                'question_order_number' => 2,
-                'question_type' => 'text'
-            ]
-        );
     }
 
     /**

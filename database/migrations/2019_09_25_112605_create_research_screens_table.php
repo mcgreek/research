@@ -23,22 +23,6 @@ class CreateResearchScreensTable extends Migration
             $table->foreign('research_id')->references('id')->on('researches');
             $table->foreign('screen_id')->references('id')->on('screens');
         });
-        
-        DB::table('research_screens')->insert(
-            [
-                'research_id' => 1,
-                'screen_id' => 1,
-                'screen_order_number' => 1
-            ]
-        );
-        
-        DB::table('research_screens')->insert(
-            [
-                'research_id' => 2,
-                'screen_id' => 1,
-                'screen_order_number' => 1
-            ]
-        );
     }
 
     /**
