@@ -37,7 +37,7 @@ return [
         'show-share-button' => 'Send',
         
         'create-pool-title' => 'Create poll for research',
-        'create-pool-dd-default-text' => ' -- select poll -- ',
+        'create-pool-dd-default-text' => ' -- select research -- ',
         'create-pool-anonymous-title' => 'Anonymous poll',
         'create-pool-share-title' => 'Allow users to share poll',
 
